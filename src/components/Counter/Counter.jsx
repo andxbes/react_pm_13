@@ -1,4 +1,4 @@
-import { memo, useState, useCallback, useMemo } from 'react';
+import { memo, useState, useCallback, useMemo, useEffect } from 'react';
 
 import IconButton from '../UI/IconButton.jsx';
 import MinusIcon from '../UI/Icons/MinusIcon.jsx';
@@ -34,6 +34,16 @@ const Counter = memo(function Counter({ initialCount }) {
     () => isPrime(initialCount),
     [initialCount]
   );
+
+  // useEffect(() => {
+  //   setCounterChanges([
+  //     {
+  //       value: initialCount,
+  //       id: Math.random() * 1000
+  //     }
+  //   ]);
+
+  // }, [initialCount]);
 
   // const [counter, setCounter] = useState(initialCount);
   const [counterChanges, setCounterChanges] = useState([
